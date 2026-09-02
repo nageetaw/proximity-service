@@ -1,0 +1,207 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+header h1 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.link-button {
+  border: none;
+  background: none;
+  color: #2563eb;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.radius-selector {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.radius-selector button {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.radius-selector button.active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.map-pane {
+  flex: 1.4;
+  min-width: 0;
+}
+
+.list-pane {
+  flex: 1;
+  min-width: 260px;
+  max-width: 420px;
+  overflow-y: auto;
+  padding: 0.75rem 1rem;
+  border-left: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+.status {
+  padding: 1rem 1.25rem;
+}
+
+.status.error {
+  color: #b91c1c;
+}
+
+.status button {
+  margin-top: 0.5rem;
+}
+
+.status-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.status.demo-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  background: #fffbeb;
+  color: #92400e;
+  border-bottom: 1px solid #fde68a;
+}
+
+.status.demo-banner p {
+  margin: 0;
+}
+
+.status.demo-banner button {
+  margin-top: 0;
+}
+
+.count {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 0 0 0.5rem;
+}
+
+.shop-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.shop-list li {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.shop-list li.selected {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.shop-name {
+  font-weight: 600;
+}
+
+.shop-meta {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 0.15rem;
+  flex-wrap: wrap;
+}
+
+.shop-address {
+  font-size: 0.78rem;
+  color: #9ca3af;
+  margin-top: 0.15rem;
+}
+
+.empty {
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+/* Marker dots rendered via Leaflet's divIcon */
+.marker-dot span,
+.marker-dot {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.marker-dot.user {
+  background: #2563eb;
+}
+
+.marker-dot.shop {
+  background: #f97316;
+}
+
+.marker-dot.shop.selected {
+  background: #dc2626;
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 720px) {
+  main {
+    flex-direction: column;
+  }
+
+  .map-pane {
+    height: 45vh;
+  }
+
+  .list-pane {
+    max-width: none;
+    border-left: none;
+    border-top: 1px solid #e5e7eb;
+  }
+}
