@@ -1,0 +1,22 @@
+services:
+  shop-service:
+    build: ./services/shop-service
+    ports:
+      - "8001:8001"
+    environment:
+      - INTERNAL_TOKEN=${INTERNAL_TOKEN:-dev-internal-token}
+      - SHOP_DB_PATH=/data/shops.db
+    volumes:
+      - shop-data:/data
+
+  location-service:
+    build: ./services/location-service
+    ports:
+      - "8000:8000"
+    environment:
+      - SHOP_SERVICE_URL=http://shop-service:8001
+    depends_on:
+      - shop-service
+
+volumes:
+  shop-data:
