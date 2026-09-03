@@ -4,6 +4,11 @@ Grant the browser location permission, and see real shops within a chosen
 radius (500m default, or 1km / 2km / 5km) — powered by a geohash-based
 proximity lookup across two small Python services.
 
+This app is **vibe coded with Claude (Sonnet 5)**, and the proximity-service
+design (geohash-based nearby search, split into a location service and a
+data-owning service) is loosely based on the "Proximity Service" chapter in
+*System Design Interview – An Insider's Guide, Volume 2* by Alex Xu.
+
 See [`.claude/plans/`](.) or ask Claude for the original design doc; the
 short version is below.
 
